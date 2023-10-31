@@ -27,7 +27,7 @@ We generate similar target dat for 'pressure_packing', 'temperature_die' and 'pr
 Let's look at a heatmap of the correlations of the random forest model:
 ![Bildschirmfoto vom 2023-10-31 13-42-52](https://github.com/emefff/Machine-Learing-in-Die-Casting-Production-with-Sklearn/assets/89903493/eb0aa4cf-a66f-4d00-b2cd-abe773125085)
 
-The values with target data = 0 (part_ok = 0) give us usable correlations on which the model will train.
+The values with target data = 0 (part_ok = 0) give us usable correlations (correlations that have values >> 0) on which the model will train.
 
 As the reader may imagine, the possibilities are next to endless with different data, more data, etc.
 
