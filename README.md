@@ -40,5 +40,5 @@ Here we load the data an can make predicitons without looking at the part! Image
 At the moment, this is still only a text output:
 ![Bildschirmfoto vom 2023-10-31 13-49-15](https://github.com/emefff/Machine-Learing-in-Die-Casting-Production-with-Sklearn/assets/89903493/1a0cd233-529c-4757-a7b4-db54aee855d8)
 
-
+emefff@gmx.at
 
