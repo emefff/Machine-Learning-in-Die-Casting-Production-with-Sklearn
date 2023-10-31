@@ -33,6 +33,7 @@ As the reader may imagine, the possibilities are next to endless with different 
 Due to the artificial nature of the data, the model makes very good prediction near 100% accuracy. This is very likely not the case for real life data. Reasons could be: insufficient training, scrap due to a parameter that is not recorded etc.
 
 How can we predict from new data if a part will be scrap or good?
+
 This is done with ML_Die_Casting_open_model_sample_preds.py
 Here we load the data an can make predicitons without looking at the part! Image a machine sending its shot data to this model: during the cooling and handling of the part there is a lot of time (+10s!) for the inference. Thus we have enoguh time to make a prediciton and send the part, if the model predicts SCRAP, to a scrap or inspection area. The amount of parts that have to be inspected may be reduced to a minimum.
 At the moment, this is still only a text output:
