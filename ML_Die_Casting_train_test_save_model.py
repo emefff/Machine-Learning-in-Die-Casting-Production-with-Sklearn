@@ -165,27 +165,46 @@ if plots == 'yes': # A LOT OF PLOTS!
     plt.figure(figsize=(15,9))
     plt.hist(v_phase2_list, bins=BINS, label='v_phase2')
     plt.legend()
+    plt.xlabel('v_phase2 / mm/s')
+    plt.ylabel('Number of shots')
     plt.show()
+    
     plt.figure(figsize=(15,9))
     plt.hist(pos_shot_start_list, bins=BINS, label='pos_shot_start')
     plt.legend()
+    plt.xlabel('pos_shot_start / mm')
+    plt.ylabel('Number of shots')
     plt.show()
+    
     plt.figure(figsize=(15,9))
     plt.hist(pos_shot_end_list, bins=BINS, label='pos_shot_end')
     plt.legend()
+    plt.xlabel('pos_shot_end / mm')
+    plt.ylabel('Number of shots')
     plt.show()
+    
     plt.figure(figsize=(15,9))
     plt.hist(pressure_packing_list, bins=BINS, label='pressure_packing')
     plt.legend()
+    plt.xlabel('pressure_packing / bar')
+    plt.ylabel('Number of shots')
     plt.show()
+    
     plt.figure(figsize=(15,9))
     plt.hist(pressure_phase2_list, bins=BINS, label='pressure_phase2')
     plt.legend()
+    plt.xlabel('pressure_phase2 / bar')
+    plt.ylabel('Number of shots')
     plt.show()
+    
     # look at distribution of ok parts
     plt.figure(figsize=(15,9))
     plt.hist(part_ok_list, bins=BINS, label='part_ok')
     plt.legend()
+    plt.xlabel('part_ok')
+    plt.ylabel('Number of shots')
+    plt.show()
+    
 else:
     pass
 
@@ -257,13 +276,13 @@ print("Classification Report:\n", classification_report(y_test, y_pred))
 
     
 ############ SHOW SOME DECISION TREES OF THE RANDOM FOREST MODEL ##############
-# from sklearn import tree
-# max_depth = 5
-# number_of_trees = 5
-# for i in range(number_of_trees):
-#     plt.figure(figsize=(15, 9))
-#     tree.plot_tree(rf_model.estimators_[i], filled = True, \
-#                     feature_names=X_train.columns, max_depth=max_depth)
+from sklearn import tree
+max_depth = 5
+number_of_trees = 2
+for i in range(number_of_trees):
+    plt.figure(figsize=(15, 9))
+    tree.plot_tree(rf_model.estimators_[i], filled = True, \
+                    feature_names=X_train.columns, max_depth=max_depth)
 
 ###################### SAVE THE MODEL IN CURRENT WORKING DIR ##################
 from joblib import dump
