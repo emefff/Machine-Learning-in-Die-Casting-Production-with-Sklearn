@@ -49,8 +49,6 @@ def make_prediction(part_data):
     return None
 
 
-
-
 ###################### LOAD THE MODEL FROM CURRENT WORKING DIR ##################
 from joblib import load
 rf_model = load('Die_Casting_RF_model.joblib') 
