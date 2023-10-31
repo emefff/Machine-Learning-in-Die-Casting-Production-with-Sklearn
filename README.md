@@ -20,9 +20,10 @@ Let's take a brief look at the generated data. For example, take the shot speed 
 ![Bildschirmfoto vom 2023-10-31 13-32-03](https://github.com/emefff/Machine-Learing-in-Die-Casting-Production-with-Sklearn/assets/89903493/bd16ed85-eb55-4a3e-9eca-089563d38a88)
 
 As we generate Gaussian values around 4000mm/s (a reasonable value) we get a EXP(-X**2) like distribution of data. Real-life data may have different distributions. Here, we only use the data for training the model.
-We also need to create data artificially, that is, we have to tell the model which values of v_phase2 (or any of the other independent parameters) does not result in a good part. At a real machine, reasons can be anything related to the hydraulics of the machine. For example: a valve could be damaged, leading to a very low shot speed v_phase2.
+We also need to create target data artificially, that is, we have to tell the model which values of v_phase2 (or any of the other independent parameters) do not result in a good part. At a real machine, reasons for v_phase2 being insufficient can be anything related to the hydraulics of the machine. For example: a valve could be damaged, leading to a very low shot speed v_phase2.
 Here we artificilly tell the model: any value of v_phase2 below 95% of the set value (4000mm/s) will lead to a scrap art. The target data 'part_ok' then is equal to 0. Good parts are assigned a value of part_ok = 1.
-We generate similar target dat for 'pressure_packing', 'temperature_die' and 'pressure_phase2'
+
+We generate similar target dat for 'pressure_packing', 'temperature_die' and 'pressure_phase2'.
 
 Let's look at a heatmap of the correlations of the random forest model:
 ![Bildschirmfoto vom 2023-10-31 13-42-52](https://github.com/emefff/Machine-Learing-in-Die-Casting-Production-with-Sklearn/assets/89903493/eb0aa4cf-a66f-4d00-b2cd-abe773125085)
