@@ -17,7 +17,7 @@ Die_Casting_RF_model.joblib
 
     
 Let's take a brief look at the generated data. For example, take the shot speed in phase 2 (this would equate to an average value in real life data, because the shot speed is almost never a horizontal line):
-![Bildschirmfoto vom 2023-10-31 16-35-05](https://github.com/emefff/Machine-Learing-in-Die-Casting-Production-with-Sklearn/assets/89903493/7e1e05c1-2997-40b3-b1b4-fd7d25e1123d)
+![Bildschirmfoto vom 2023-11-01 17-05-26](https://github.com/emefff/Machine-Learing-in-Die-Casting-Production-with-Sklearn/assets/89903493/80ec501a-552a-4da5-b043-692d869f3c1d)
 
 
 As we generate Gaussian values around 4000mm/s (a reasonable value) we get a EXP(-X**2) like distribution of data. Real-life data may have different distributions. Here, we only use the data for training the model.
@@ -27,9 +27,8 @@ Here we artificilly tell the model: any value of v_phase2 below 95% of the set v
 We generate similar target dat for 'pressure_packing', 'temperature_die' and 'pressure_phase2'.
 
 Let's look at a heatmap of the correlations of the random forest model:
-![Bildschirmfoto vom 2023-10-31 13-42-52](https://github.com/emefff/Machine-Learing-in-Die-Casting-Production-with-Sklearn/assets/89903493/eb0aa4cf-a66f-4d00-b2cd-abe773125085)
+![Bildschirmfoto vom 2023-11-01 17-04-38](https://github.com/emefff/Machine-Learing-in-Die-Casting-Production-with-Sklearn/assets/89903493/65c9b978-958b-450b-818f-ba49140cb91d)
 
-The values with target data = 0 (part_ok = 0) give us usable correlations (correlations that have values >> 0) on which the model will train.
 
 As the reader may imagine, the possibilities are next to endless with different data, more data, etc.
 
