@@ -39,7 +39,8 @@ How can we predict from new data if a part will be scrap or good?
 This is done with ML_Die_Casting_open_model_sample_preds.py .
 Here we load the data an can make predicitons without looking at the part! Image a machine sending its shot data to this model: during the cooling and handling of the part there is a lot of time (+10s!) for the inference. Thus we have enoguh time to make a prediciton and send the part, if the model predicts SCRAP, to a scrap or inspection area. The number of parts that have to be inspected may be reduced to a minimum.
 At the moment, this is still only a text output:
-![Bildschirmfoto vom 2023-10-31 13-49-15](https://github.com/emefff/Machine-Learing-in-Die-Casting-Production-with-Sklearn/assets/89903493/1a0cd233-529c-4757-a7b4-db54aee855d8)
+![Bildschirmfoto vom 2023-11-01 17-07-21](https://github.com/emefff/Machine-Learing-in-Die-Casting-Production-with-Sklearn/assets/89903493/edd92f9b-6e65-4215-816e-4e652ab05ead)
+
 
 emefff@gmx.at
 
