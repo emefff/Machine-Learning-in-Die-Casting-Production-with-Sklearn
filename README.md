@@ -24,15 +24,19 @@ As we generate Gaussian values around 4000mm/s (a reasonable value) we get a EXP
 We also need to create target data artificially, that is, we have to tell the model which values of v_phase2 (or any of the other independent parameters) do not result in a good part. At a real machine, reasons for v_phase2 being insufficient can be anything related to the hydraulics of the machine. For example: a valve could be damaged, leading to a very low shot speed v_phase2.
 Here we artificilly tell the model: any value of v_phase2 below 95% of the set value (4000mm/s) will lead to a scrap art. The target data 'part_ok' then is equal to 0. Good parts are assigned a value of part_ok = 1.
 
-We generate similar target dat for 'pressure_packing', 'temperature_die' and 'pressure_phase2'.
+We generate similar target data for 'pressure_packing', 'temperature_die' and 'pressure_phase2'.
 
 Let's look at a heatmap of the correlations of the random forest model:
-![Bildschirmfoto vom 2023-11-01 17-04-38](https://github.com/emefff/Machine-Learing-in-Die-Casting-Production-with-Sklearn/assets/89903493/65c9b978-958b-450b-818f-ba49140cb91d)
+![Bildschirmfoto vom 2023-11-02 14-12-43](https://github.com/emefff/Machine-Learing-in-Die-Casting-Production-with-Sklearn/assets/89903493/7dc08bf9-97dd-4051-8504-557925834398)
 
 
 As the reader may imagine, the possibilities are next to endless with different data, more data, etc.
 
 Due to the artificial nature of the data, the model makes very good prediction near 100% accuracy. This is very likely not the case for real life data. Reasons could be: insufficient training, scrap due to a parameter that is not recorded etc.
+The model is later optimized with GridSearchCV. The diagram below shows accuracy and cv_score over number of shots. With the percentages of scrap we set/calculate here, we only need approx. more than 1000 shots to get scores near 100%. Curves of rf_model and rf_tuned are always very close, indicating that the default values of the RFClassifier are already very good. There is not much point in optimizing with these data. As the data varies from run to run, there is more variance between the runs:
+
+![Bildschirmfoto vom 2023-11-02 14-11-16](https://github.com/emefff/Machine-Learing-in-Die-Casting-Production-with-Sklearn/assets/89903493/971277aa-6705-4407-b2ca-35952795cd91)
+
 
 How can we predict from new data if a part will be scrap or good?
 
