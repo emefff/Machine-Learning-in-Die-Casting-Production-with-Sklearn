@@ -32,7 +32,7 @@ Let's look at a heatmap of the correlations of the random forest model:
 
 As the reader may imagine, the possibilities are next to endless with different data, more data, etc.
 
-Due to the artificial nature of the data, the model makes very good prediction near 100% accuracy. This is very likely not the case for real life data. Reasons could be: insufficient training, scrap due to a parameter that is not recorded etc.
+Due to the artificial nature of the data, the model makes very good predictions near 100% accuracy. This is very likely not the case for real life data. Reasons could be: insufficient training, scrap due to a parameter that is not recorded etc.
 The model is later optimized with GridSearchCV. The diagram below shows accuracy and cv_score over number of shots. With the percentages of scrap we set/calculate here, we only need approx. more than 1000 shots to get scores near 100%. Curves of rf_model and rf_tuned are always very close, indicating that the default values of the RFClassifier are already very good. There is not much point in optimizing with these data. As the data varies from run to run, there is more variance between the runs:
 
 ![Bildschirmfoto vom 2023-11-02 14-11-16](https://github.com/emefff/Machine-Learing-in-Die-Casting-Production-with-Sklearn/assets/89903493/971277aa-6705-4407-b2ca-35952795cd91)
