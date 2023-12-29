@@ -17,8 +17,8 @@ Die_Casting_RF_model.joblib
 
     
 Let's take a brief look at the generated data. For example, take the shot speed in phase 2 (this would equate to an average value in real life data, because the shot speed is almost never a horizontal line):
-![Bildschirmfoto vom 2023-11-01 17-05-26](https://github.com/emefff/Machine-Learing-in-Die-Casting-Production-with-Sklearn/assets/89903493/80ec501a-552a-4da5-b043-692d869f3c1d)
 
+![Bildschirmfoto vom 2023-11-01 17-05-26](https://github.com/emefff/Machine-Learing-in-Die-Casting-Production-with-Sklearn/assets/89903493/80ec501a-552a-4da5-b043-692d869f3c1d)
 
 As we generate Gaussian values around 4000mm/s (a reasonable value) we get a EXP(-X**2) like distribution of data. Real-life data may have different distributions. Here, we only use the data for training the model.
 We also need to create target data artificially, that is, we have to tell the model which values of v_phase2 (or any of the other independent parameters) do not result in a good part. At a real machine, reasons for v_phase2 being insufficient can be anything related to the hydraulics of the machine. For example: a valve could be damaged, leading to a very low shot speed v_phase2.
@@ -27,8 +27,8 @@ Here we artificilly tell the model: any value of v_phase2 below 95% of the set v
 We generate similar target data for 'pressure_packing', 'temperature_die' and 'pressure_phase2'.
 
 Let's look at a heatmap of the correlations of the random forest model:
-![Bildschirmfoto vom 2023-11-02 14-12-43](https://github.com/emefff/Machine-Learing-in-Die-Casting-Production-with-Sklearn/assets/89903493/7dc08bf9-97dd-4051-8504-557925834398)
 
+![Bildschirmfoto vom 2023-11-02 14-12-43](https://github.com/emefff/Machine-Learing-in-Die-Casting-Production-with-Sklearn/assets/89903493/7dc08bf9-97dd-4051-8504-557925834398)
 
 As the reader may imagine, the possibilities are next to endless with different data, more data, etc.
 
@@ -37,14 +37,13 @@ The model is later optimized with GridSearchCV. The diagram below shows accuracy
 
 ![Bildschirmfoto vom 2023-11-02 14-11-16](https://github.com/emefff/Machine-Learing-in-Die-Casting-Production-with-Sklearn/assets/89903493/971277aa-6705-4407-b2ca-35952795cd91)
 
-
 How can we predict from new data if a part will be scrap or good?
 
-This is done with ML_Die_Casting_open_model_sample_preds.py .
+This is done with ML_Die_Casting_open_model_sample_preds.py.
 Here we load the data an can make predicitons without looking at the part! Image a machine sending its shot data to this model: during the cooling and handling of the part there is a lot of time (+10s!) for inference. Thus we have enough time to make a prediciton and send the part, if the model predicts 'SCRAP', to a scrap or inspection area. The number of parts that have to be inspected may be reduced to a minimum.
 At the moment, this is still only a text output:
-![Bildschirmfoto vom 2023-11-01 17-07-21](https://github.com/emefff/Machine-Learing-in-Die-Casting-Production-with-Sklearn/assets/89903493/edd92f9b-6e65-4215-816e-4e652ab05ead)
 
+![Bildschirmfoto vom 2023-11-01 17-07-21](https://github.com/emefff/Machine-Learing-in-Die-Casting-Production-with-Sklearn/assets/89903493/edd92f9b-6e65-4215-816e-4e652ab05ead)
 
 emefff@gmx.at
 
