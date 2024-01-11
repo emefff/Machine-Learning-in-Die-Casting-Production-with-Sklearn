@@ -1,4 +1,4 @@
-# Machine-Learing-in-Die-Casting-Production-with-Sklearn
+# Machine-Learning-in-Die-Casting-Production-with-Sklearn
 
 This is a simple example on how machine learning could be implemented in a production environment (here: die casting, but it could really be any kind of production). 
 There are three files in the folder:
